@@ -1,2 +1,3 @@
 # Introduction-to-TensorFlow
-Some homework on coursera
+Just saving some exercise while learning on coursera as mark.
+Just entertaining myself.
