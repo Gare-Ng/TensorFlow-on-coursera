@@ -13,6 +13,8 @@ class myCallback(tf.keras.callbacks.Callback):
                 print("\nReached 99.8% accuracy so cancelling training!")
                 self.model.stop_training = True
 
+callbacks = myCallback()
+
 model = tf.keras.models.Sequential([
   tf.keras.layers.Conv2D(16, (3,3), activation='relu', input_shape=(28, 28, 1)),
   tf.keras.layers.MaxPooling2D(2, 2),
@@ -21,6 +23,6 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-model.fit(training_images, training_labels, epochs=20£¬callbacks=[callbacks])
+model.fit(training_images, training_labels, epochs=20,callbacks=[callbacks])
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(test_acc)
